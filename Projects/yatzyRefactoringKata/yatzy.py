@@ -118,17 +118,10 @@ class Yatzy:
 
     @staticmethod
     def smallStraight(*dice):
-        one = 1
-        two = 2
-        three = 3
-        four = 4
-        five = 5
-        if dice.count(one) == 1 and dice.count(two) == 1 and dice.count(three) == 1 and dice.count(four) and dice.count(five):
-            return 15
-        else: 
-            return 0
-        
-    
+        for number in range(1,6):
+            if dice.count(number) != 1:
+                return 0
+        return 15
 
     @staticmethod
     def largeStraight( d1,  d2,  d3,  d4,  d5):
