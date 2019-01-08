@@ -242,4 +242,9 @@ if __name__ == '__main__':
     assert 16 == Yatzy.two_pair(3,3,5,4,5)
     assert 18 == Yatzy.two_pair(3,3,6,6,6)
     assert 0 == Yatzy.two_pair(3,3,6,5,4)
+
+    # THREE OF A KIND TEST CASES
+        assert 9 == Yatzy.three_of_a_kind(3,3,3,4,5)
+        assert 15 == Yatzy.three_of_a_kind(5,3,5,4,5)
+        assert 9 == Yatzy.three_of_a_kind(3,3,3,3,5)
     
