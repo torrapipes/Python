@@ -111,17 +111,14 @@ class Yatzy:
     
 
     @staticmethod
-    def three_of_a_kind( d1,  d2,  d3,  d4,  d5):
-        t = [0]*6
-        t[d1-1] += 1
-        t[d2-1] += 1
-        t[d3-1] += 1
-        t[d4-1] += 1
-        t[d5-1] += 1
-        for i in range(6):
-            if (t[i] >= 3):
-                return (i+1) * 3
-        return 0
+    def three_of_a_kind(*dice):
+        score = 0
+        for die in dice:
+            if dice.count(die) >= 3:
+                score = die * 3
+                break
+        return score
+
     
 
     @staticmethod
@@ -244,7 +241,6 @@ if __name__ == '__main__':
     assert 0 == Yatzy.two_pair(3,3,6,5,4)
 
     # THREE OF A KIND TEST CASES
-        assert 9 == Yatzy.three_of_a_kind(3,3,3,4,5)
-        assert 15 == Yatzy.three_of_a_kind(5,3,5,4,5)
-        assert 9 == Yatzy.three_of_a_kind(3,3,3,3,5)
-    
+    assert 9 == Yatzy.three_of_a_kind(3,3,3,4,5)
+    assert 15 == Yatzy.three_of_a_kind(5,3,5,4,5)
+    assert 9 == Yatzy.three_of_a_kind(3,3,3,3,5)
