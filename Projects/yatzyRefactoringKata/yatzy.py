@@ -130,39 +130,21 @@ class Yatzy:
                 return 0
         return 20
     
+    @staticmethod
+    def pairForHouse(*dice):
+        for die in dice:
+            if dice.count(die) == 2:
+                return 2 * die
 
     @staticmethod
-    def fullHouse( d1,  d2,  d3,  d4,  d5):
-        tallies = []
-        _2 = False
-        i = 0
-        _2_at = 0
-        _3 = False
-        _3_at = 0
-
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-
-        for i in range(6):
-            if (tallies[i] == 2): 
-                _2 = True
-                _2_at = i+1
-            
-
-        for i in range(6):
-            if (tallies[i] == 3): 
-                _3 = True
-                _3_at = i+1
-            
-
-        if (_2 and _3):
-            return _2_at * 2 + _3_at * 3
+    def fullHouse(*dice):
+        if Yatzy.three_of_a_kind(*dice) and Yatzy.pairForHouse(*dice):
+            return Yatzy.three_of_a_kind(*dice) + Yatzy.pairForHouse(*dice)
         else:
             return 0
+    
+    
+        
 
 if __name__ == '__main__':
 
