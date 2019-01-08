@@ -93,22 +93,7 @@ class Yatzy:
                 pairs.append(die)
         if len(pairs) > 1:
             score = pairs[0] * 2 + pairs[1] * 2
-        return score
-
-    
-    @staticmethod
-    def four_of_a_kind( _1,  _2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[_1-1] += 1
-        tallies[_2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-        for i in range(6):
-            if (tallies[i] >= 4):
-                return (i+1) * 4
-        return 0
-    
+        return score  
 
     @staticmethod
     def three_of_a_kind(*dice):
@@ -119,7 +104,15 @@ class Yatzy:
                 break
         return score
 
-    
+
+    @staticmethod
+    def four_of_a_kind(*dice):
+        score = 0
+        for die in dice:
+           if dice.count(die) >= 4:
+               score = die * 4
+               break
+        return score
 
     @staticmethod
     def smallStraight( d1,  d2,  d3,  d4,  d5):
@@ -244,3 +237,9 @@ if __name__ == '__main__':
     assert 9 == Yatzy.three_of_a_kind(3,3,3,4,5)
     assert 15 == Yatzy.three_of_a_kind(5,3,5,4,5)
     assert 9 == Yatzy.three_of_a_kind(3,3,3,3,5)
+
+   # FOUR OF A KIND TEST CASES
+    assert 12 == Yatzy.four_of_a_kind(3,3,3,3,5)
+    assert 20 == Yatzy.four_of_a_kind(5,5,5,4,5)
+    assert 12 == Yatzy.four_of_a_kind(3,3,3,3,3)
+    assert 0  == Yatzy.four_of_a_kind(3,3,3,2,1)
