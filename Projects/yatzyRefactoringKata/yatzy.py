@@ -98,9 +98,10 @@ class Yatzy:
     @staticmethod
     def three_of_a_kind(*dice):
         score = 0
+        three = 3
         for die in dice:
-            if dice.count(die) >= 3:
-                score = die * 3
+            if dice.count(die) >= three:
+                score = die * three
                 break
         return score
 
@@ -108,9 +109,10 @@ class Yatzy:
     @staticmethod
     def four_of_a_kind(*dice):
         score = 0
+        four = 4
         for die in dice:
-           if dice.count(die) >= 4:
-               score = die * 4
+           if dice.count(die) >= four:
+               score = die * four
                break
         return score
 
