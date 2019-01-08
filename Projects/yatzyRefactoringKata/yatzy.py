@@ -236,4 +236,8 @@ if __name__ == '__main__':
     assert 20 == Yatzy.largeStraight(6,2,3,4,5)
     assert 20 == Yatzy.largeStraight(2,3,4,5,6)
     assert 0 == Yatzy.largeStraight(1,2,2,4,5)
+
+    # FULL HOUSE TEST CASES
+    assert 18 == Yatzy.fullHouse(6,2,2,2,6)
+    assert 0 == Yatzy.fullHouse(2,3,4,5,6)
   
