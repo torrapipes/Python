@@ -240,3 +240,9 @@ if __name__ == '__main__':
     assert 15 == Yatzy.smallStraight(1,2,3,4,5)
     assert 15 == Yatzy.smallStraight(2,3,4,5,1)
     assert 0 == Yatzy.smallStraight(1,2,2,4,5)
+
+    # LARGE STRAIGHT TEST CASES
+    assert 20 == Yatzy.largeStraight(6,2,3,4,5)
+    assert 20 == Yatzy.largeStraight(2,3,4,5,6)
+    assert 0 == Yatzy.largeStraight(1,2,2,4,5)
+  
