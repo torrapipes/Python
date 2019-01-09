@@ -12,7 +12,7 @@ class RegularItem(Item, Updatable):
             self.setQuality(-1)
         else:
             self.setQuality(-2)
-        self.setSell_in ()
+        self.setSell_in()
 
     def setQuality(self, value):
         if self.quality + value > 50:

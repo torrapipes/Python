@@ -1,10 +1,8 @@
-from regularitem import RegularItem
+from regularItem import RegularItem
 
 class AgedBrie(RegularItem):
 
-    
 
-    
     def update_quality(self):
 
         if self.sell_in > 0:
@@ -13,21 +11,11 @@ class AgedBrie(RegularItem):
             self.setQuality(2)
         self.setSell_in()
 
-    
-
 
 if __name__ == '__main__':
 
-    item = AgedBrie("Aged Brie", 2, 0)
-    print(item)
+    Duck = AgedBrie("Aged Brie", 2, 0)
+    Duck.update_quality()
 
-    # test update_quality
-    for dia in range(1, 10):
-        item.update_quality()
-        print(item)
-
-    # test update_quality incorret input
-    item = AgedBrie("Aged Brie", 2, 100)
-    for dia in range(1, 10):
-        item.update_quality()
-        print(item)
+    assert Duck.getQuality() == 1
+    
