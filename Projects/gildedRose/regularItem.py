@@ -21,6 +21,15 @@ class RegularItem(Item, Updatable):
             self.quality += value 
         else: 
             self.quality = 0
+    
+    def getName(self):
+        return self.name
+
+    def getSell_in(self):
+        return self.sell_in
+    
+    def getQuality(self):
+        return self.quality
 
 
 if __name__ == '__main__':
@@ -33,4 +42,12 @@ if __name__ == '__main__':
     # TEST CASES
     assert Duck.getSell_in() == -1
     assert Duck.getQuality() == 2
+
+    # CREATED AN OBJECT
+    Dog = RegularItem("Dog", 100, 1)
+
+    # TEST CASES
+    assert Dog.getName() == "Dog"
+    assert Dog.getSell_in() == 100
+    assert Dog.getQuality() == 1
     
