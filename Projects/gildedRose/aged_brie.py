@@ -1,24 +1,10 @@
-class aged_brie():
+from regularitem import RegularItem
 
-    def __init__(self, name, sell_in, quality):
-        self.name = name
-        self.sell_in = sell_in
-        self.quality = quality
+class AgedBrie(RegularItem):
 
-    def setSell_in(self):
-        self.sell_in = self.sell_in - 1
+    
 
-    # Override metodo setQuality de NormalItem
-    def setQuality(self, valor):
-
-        if self.quality + valor <= 50:
-            self.quality = self.quality + valor
-        else:
-            self.quality = 50
-        # NormalItem.setQuality(self, valor)
-        assert 0 <= self.quality <= 50, "quality de %s fuera de rango" % self.__class__.__name__
-
-    # Override metodo update_quality de la Interfaz
+    
     def update_quality(self):
 
         if self.sell_in > 0:
@@ -27,8 +13,7 @@ class aged_brie():
             self.setQuality(2)
         self.setSell_in()
 
-    def __repr__(self):
-        return "%s, %s, %s" % (self.name, self.sell_in, self.quality)
+    
 
 
 if __name__ == '__main__':

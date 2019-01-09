@@ -6,8 +6,8 @@ class Item():
         self.sell_in = sell_in
         self.quality = quality
 
-    def __repr__(self, name, sell_in, quality):
-        return '%s, %s, %s' % (self.getName(), self.getSell_in, self.getQuality)
+    def __repr__(self):
+        return '%s, %s, %s' % (self.getName(), self.getSell_in(), self.getQuality())
 
     def getName(self):
         return self.name
@@ -21,10 +21,12 @@ class Item():
 
 if __name__ == '__main__':
 
+
+    
     # CREATED OBJECT
     Duck = Item("Duck", 100, 1)
 
     # TEST CASES
-    assert duck.getName() == "Duck"
-    assert duck.getSell_in() == 100
-    assert duck.getQuality() == 1
+    assert Duck.getName() == "Duck"
+    assert Duck.getSell_in() == 100
+    assert Duck.getQuality() == 1
