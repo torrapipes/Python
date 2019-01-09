@@ -1,9 +1,9 @@
 from regularItem import RegularItem
 
-class backstage(RegularItem):
+class Backstage(RegularItem):
 
     def update_quality(self):
-        if self.sell_in > 10:
+        if self.sell_in >= 10:
             self.setQuality(+1)
         else:
             self.setQuality(+2)
@@ -13,7 +13,7 @@ class backstage(RegularItem):
 if __name__ == '__main__':
 
     # CREATED OBJECT
-    backstage = backstage("backstage", 9, 3)
+    backstage = Backstage("backstage", 9, 3)
     backstage.update_quality()
 
     # TEST CASES
