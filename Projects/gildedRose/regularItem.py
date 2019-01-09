@@ -36,18 +36,18 @@ if __name__ == '__main__':
 
 
     # CREATED AN OBJECT
-    Duck = RegularItem("Duck", 0, 4)
-    Duck.update_quality()
+    duck = RegularItem("duck", 0, 4)
+    duck.update_quality()
     
     # TEST CASES
-    assert Duck.getSell_in() == -1
-    assert Duck.getQuality() == 2
+    assert duck.getSell_in() == -1
+    assert duck.getQuality() == 2
 
     # CREATED AN OBJECT
-    Dog = RegularItem("Dog", 100, 1)
+    dog = RegularItem("dog", 100, 1)
 
     # TEST CASES
-    assert Dog.getName() == "Dog"
-    assert Dog.getSell_in() == 100
-    assert Dog.getQuality() == 1
+    assert dog.getName() == "dog"
+    assert dog.getSell_in() == 100
+    assert dog.getQuality() == 1
     

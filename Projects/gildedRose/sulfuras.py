@@ -10,7 +10,7 @@ class Sulfuras(RegularItem):
 
 if __name__ == '__main__':
 
-    item = Sulfuras("Sulfuras, mano de Maradona", 3, 80)
+    sulfuras = Sulfuras("Sulfuras, mano de Maradona", 3, 80)
 
-    item.update_quality()
-    assert item.getQuality() == 80
+    sulfuras.update_quality()
+    assert sulfuras.getQuality() == 80

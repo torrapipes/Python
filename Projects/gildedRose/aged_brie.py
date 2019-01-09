@@ -14,8 +14,8 @@ class AgedBrie(RegularItem):
 
 if __name__ == '__main__':
 
-    Duck = AgedBrie("Aged Brie", 2, 0)
-    Duck.update_quality()
+    agedBrie = AgedBrie("agedBrie", 2, 0)
+    agedBrie.update_quality()
 
-    assert Duck.getQuality() == 1
+    assert agedBrie.getQuality() == 1
     
